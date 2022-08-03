@@ -1,39 +1,60 @@
 import { Form, Button } from 'react-bootstrap'
 
 const RepertoireForm = (props) => {
-    // const { repertoire } = props
+    const { repertoire, handleChange } = props
     return (
         <Form>
-            <Form.Label htmlFor="name">Name</Form.Label>
+            <Form.Label htmlFor="piece">Piece</Form.Label>
             <Form.Control
-                placeholder="What is your pet's name?"
-                name="name"
-                id="name"
-                // onChange={ handleChange }
+                placeholder="What is name of the piece?"
+                name="piece"
+                id="piece"
+                value={ repertoire.piece }
+                onChange={ handleChange }
             />
-            <Form.Label htmlFor="type">Type</Form.Label>
+            <Form.Label htmlFor="catalog">Catalog</Form.Label>
             <Form.Control
-                placeholder="What kind of pet is this?"
-                name="type"
-                id="type"
-                // value={ pet.type }
-                // onChange={ handleChange }
+                placeholder="What the Catalog or Opus number?"
+                name="catalog"
+                id="catalog"
+                value={ repertoire.catalog }
+                onChange={ handleChange }
             />
-            <Form.Label htmlFor="age">Age</Form.Label>
+            <Form.Label htmlFor="composer">Composer</Form.Label>
             <Form.Control
-                placeholder="How old is your pet?"
+                placeholder="Who is the Composer?"
+                name="composer"
+                id="composer"
+                value={ repertoire.composer }
+                onChange={ handleChange }
+            />
+            <Form.Label htmlFor="level">Level</Form.Label>
+            <Form.Control
+                placeholder="What is the leve of difficultly?"
                 type="number"
-                name="age"
-                id="age"
-                // value={ pet.age }
-                // onChange={ handleChange }
+                name="level"
+                id="level"
+                value={ repertoire.level }
+                onChange={ handleChange }
             />
-            <Form.Check
-                label="Is this pet adoptable?"
-                name="adoptable"
-                // defaultChecked={ pet.adoptable  }
-                // onChange={ handleChange }
+            <Form.Label htmlFor="date">Published</Form.Label>
+            <Form.Control
+                // placeholder="How old is your pet?"
+                type="date"
+                name="date"
+                id="date"
+                value={ repertoire.published }
+                onChange={ handleChange }
             />
+            <Form.Label htmlFor="description">Description</Form.Label>
+            <Form.Control
+                placeholder="Some info about the piece"
+                name="description"
+                id="description"
+                value={ repertoire.description }
+                onChange={ handleChange }
+            />
+
             <Button type="submit">Submit</Button>
         </Form>
     )

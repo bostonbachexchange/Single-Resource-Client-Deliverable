@@ -20,7 +20,7 @@ const RepertoirezIndex = (props) => {
         getAllRepertoirez()
             // .then(res => console.log('res', res.data.repertoirez))
             .then(res => setRepertoirez(res.data.repertoirez))
-            .catch(err => {
+            .catch(err => { 
                 msgAlert({
                     heading: 'Error Getting Pets',
                     message: messages.getRepertoirezFailure,
