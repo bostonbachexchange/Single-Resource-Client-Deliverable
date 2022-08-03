@@ -71,7 +71,7 @@ const App = () => {
 					<Route
 						path='/repertoirez/:id'
 						element={
-						<ShowRepertoire/>}
+						<ShowRepertoire msgAlert={ msgAlert }/>}
 					/>
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
