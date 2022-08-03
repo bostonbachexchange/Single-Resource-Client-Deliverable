@@ -8,7 +8,7 @@ const Home = (props) => {
 	return (
 		<>
 			<h2>Repertoire List</h2>
-			<RepertoirezIndex msgAlert={ msgAlert }/>
+			<RepertoirezIndex msgAlert={ msgAlert } />
 		</>
 	)
 }
