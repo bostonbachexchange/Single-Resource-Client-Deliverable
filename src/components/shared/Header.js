@@ -18,6 +18,11 @@ const authenticatedOptions = (
 				Sign Out
 			</Link>
 		</Nav.Item>
+		<Nav.Item>
+			<Link to='/addRepertoire' style={linkStyle}>
+				Add Repertoire
+			</Link>
+		</Nav.Item>
 	</>
 )
 

@@ -12,26 +12,28 @@ const cardContainerStyle = {
 
 const RepertoirezIndex = (props) => {
     const [repertoirez, setRepertoirez] = useState(null)
+    const [error, setError] = useState(false)
+
     const { msgAlert } = props
     
     useEffect(() => {
         getAllRepertoirez()
             // .then(res => console.log('res', res.data.repertoirez))
-             .then(res => setRepertoirez(res.data.repertoirez))
+            .then(res => setRepertoirez(res.data.repertoirez))
             .catch(err => {
                 msgAlert({
                     heading: 'Error Getting Pets',
                     message: messages.getRepertoirezFailure,
                     variant: 'danger',
                 })
-                // setError(true)
+                setError(true)
             })
         console.log('use effect works', repertoirez)
     }, [])
 
-    // if (error) {
-    //     return <p>Error!</p>
-    // }
+    if (error) {
+        return <p>Error!</p>
+    }
 
     if (!repertoirez) {
         return (<div style={{textAlign: "center"}}>

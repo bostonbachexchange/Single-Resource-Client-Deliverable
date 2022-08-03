@@ -13,6 +13,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ShowRepertoire from './components/repertoirez/ShowRepertoire'
+// import RepertoireForm from './components/shared/RepertoireForm'
+import CreateRepertoire from './components/repertoirez/CreateRepertoire'
 
 const App = () => {
 
@@ -72,6 +74,14 @@ const App = () => {
 						path='/repertoirez/:id'
 						element={
 						<ShowRepertoire msgAlert={ msgAlert }/>}
+					/>
+					<Route
+						path='/addRepertoire'
+						element={
+							<RequireAuth user={user}>
+								<CreateRepertoire msgAlert={ msgAlert }/>
+							</RequireAuth>}
+
 					/>
 				</Routes>
 				{msgAlerts.map((msgAlert) => (
