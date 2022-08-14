@@ -11,10 +11,13 @@ const CreateRepertoire = (props) => {
         published: ''
     })
 
+    console.log('this is rep in createRep', repertoire)
+
     const handleChange = (e) => {
         setRepertoire(prevRepertoire => {
             const updatedValue = e.target.value
             const updatedName = e.target.name
+            
             const updatedRepertoire = {
                 [updatedName]: updatedValue
             }
